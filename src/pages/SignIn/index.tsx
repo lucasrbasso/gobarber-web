@@ -1,5 +1,6 @@
 import React, { useCallback, useRef } from 'react';
 import { FiLock, FiLogIn, FiMail } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 
 import * as Yup from 'yup';
 
@@ -8,7 +9,7 @@ import { FormHandles } from '@unform/core';
 
 import logoImg from '../../assets/logo.svg';
 
-import { Container, Content, Background } from './styles';
+import { Container, Content, Background, AnimationContainer } from './styles';
 
 import Input from '../../components/Input';
 import Button from '../../components/Button';
@@ -54,6 +55,8 @@ const SignIn: React.FC = () => {
                 if (err instanceof Yup.ValidationError) {
                     const errors = getValidationsErros(err);
                     formRef.current?.setErrors(errors);
+
+                    return;
                 }
 
                 addToast({
@@ -70,28 +73,31 @@ const SignIn: React.FC = () => {
     return (
         <Container>
             <Content>
-                <img src={logoImg} alt="GoBarber" />
-                <Form onSubmit={handleSubmit} ref={formRef}>
-                    <h1>Faça seu login</h1>
+                <AnimationContainer>
+                    <img src={logoImg} alt="GoBarber" />
+                    <Form onSubmit={handleSubmit} ref={formRef}>
+                        <h1>Faça seu login</h1>
 
-                    <Input name="email" icon={FiMail} placeholder="Email" />
-                    <Input
-                        name="password"
-                        icon={FiLock}
-                        type="password"
-                        placeholder="Senha"
-                    />
+                        <Input name="email" icon={FiMail} placeholder="Email" />
+                        <Input
+                            name="password"
+                            icon={FiLock}
+                            type="password"
+                            placeholder="Senha"
+                        />
 
-                    <Button type="submit">Entrar</Button>
+                        <Button type="submit">Entrar</Button>
 
-                    <a href="forgot">Esqueci minha senha</a>
-                </Form>
+                        <a href="forgot">Esqueci minha senha</a>
+                    </Form>
 
-                <a href="create">
-                    <FiLogIn size={20} />
-                    Criar conta
-                </a>
+                    <Link to="/signup">
+                        <FiLogIn size={20} />
+                        Criar conta
+                    </Link>
+                </AnimationContainer>
             </Content>
+
             <Background />
         </Container>
     );
