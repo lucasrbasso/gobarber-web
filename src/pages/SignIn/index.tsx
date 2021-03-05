@@ -1,6 +1,6 @@
 import React, { useCallback, useRef } from 'react';
 import { FiLock, FiLogIn, FiMail } from 'react-icons/fi';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import * as Yup from 'yup';
 
@@ -29,6 +29,7 @@ const SignIn: React.FC = () => {
 
     const { signIn } = useAuth();
     const { addToast } = useToast();
+    const history = useHistory();
 
     // eslint-disable-next-line @typescript-eslint/ban-types
     const handleSubmit = useCallback(
@@ -46,6 +47,8 @@ const SignIn: React.FC = () => {
                 await schema.validate(data, {
                     abortEarly: false,
                 });
+
+                history.push('/');
 
                 await signIn({
                     email: data.email,
@@ -67,7 +70,7 @@ const SignIn: React.FC = () => {
                 });
             }
         },
-        [signIn, addToast],
+        [signIn, addToast, history],
     );
 
     return (
