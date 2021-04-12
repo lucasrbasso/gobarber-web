@@ -1,3 +1,4 @@
+import { differenceInDays, parseISO } from 'date-fns';
 import React, { createContext, useCallback, useState, useContext } from 'react';
 import api from '../services/api';
 
@@ -31,6 +32,15 @@ const AuthProvider: React.FC = ({ children }) => {
     const [data, setData] = useState<AuthState>(() => {
         const token = localStorage.getItem('@GoBarber:token');
         const user = localStorage.getItem('@GoBarber:user');
+        const dateLogged = localStorage.getItem('@GoBarber:date');
+
+        if (dateLogged) {
+            const date = parseISO(JSON.parse(dateLogged));
+
+            if (differenceInDays(new Date(Date.now()), date) >= 1) {
+                return {} as AuthState;
+            }
+        }
 
         if (token && user) {
             api.defaults.headers.authorization = `Bearer ${token}`;
@@ -49,6 +59,10 @@ const AuthProvider: React.FC = ({ children }) => {
 
             localStorage.setItem('@GoBarber:token', token);
             localStorage.setItem('@GoBarber:user', JSON.stringify(user));
+            localStorage.setItem(
+                '@GoBarber:date',
+                JSON.stringify(new Date(Date.now())),
+            );
 
             api.defaults.headers.authorization = `Bearer ${token}`;
 
