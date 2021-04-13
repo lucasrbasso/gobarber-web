@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img alt="Logo" src="" width="200px">
+  <img alt="GoBarber" src="/github/goBarber.png" width="200px">
 </h1>
 
 <h3 align="center">
@@ -19,7 +19,7 @@
 </br>
 
 <p align="center">
-  <img alt="Layout" src="">
+  <img alt="Layout" src="/github/goBarber.gif">
 </p>
 
 ## 💻 About the project
