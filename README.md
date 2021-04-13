@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img alt="GoBarber" src="/github/goBarber.png" width="200px">
+  <img alt="GoBarber" src="/github/goBarber.png" width="100%">
 </h1>
 
 <h3 align="center">
@@ -7,14 +7,6 @@
 </h3>
 
 <p align="center">The best barber shop scheduling tool!</p>
-
-<p align="center">
-  <a href="#%EF%B8%8F-about-the-project">About the project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-getting-started">Getting started</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-how-to-contribute">How to contribute</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-license">License</a>
-</p>
 
 </br>
 
@@ -25,7 +17,8 @@
 ## 💻 About the project
 
 To see the **api**, click here: [GoBarber Rest API](https://github.com/lucasrbasso/goBarber-backend)</br>
-To see the **mobile client**, click here: [GoBarber Mobile](https://github.com/lucasrbasso/appgobarber)
+To see the **mobile client**, click here: [GoBarber Mobile](https://github.com/lucasrbasso/appgobarber)</br>
+To see the **figma template**, click here: [Figma GoBarber](https://www.figma.com/file/BXCihtXXh9p37lGsENV614/GoBarber)
 
 ## 🚀 Technologies
 
@@ -68,4 +61,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-Made with 💜 by Lucas Basso.
+Made with 💜 by Lucas Basso during GoStack Bootcamp - Rocketseat.
